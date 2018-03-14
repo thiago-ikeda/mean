@@ -1,0 +1,46 @@
+<header>
+    <h2 class="text-primary">{{ title }}</h2>
+</header>
+
+<article>
+    <form name="orderForm">
+        <div class="form-group">
+            <label for="customerName"><strong>Customer name</strong></label>
+            <input class="form-control" id="customerName" name="customerName" type="text" disabled ng-model="customer.name"/>
+        </div>
+        <div class="form-group">
+            <label for="product"><strong>Product</strong></label>
+            <select class="form-control" id="product" name="product" required ng-model="selectedProduct" ng-options="product.description for product in productList track by product._id">
+                <option value="">Select a product</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="amount"><strong>Amount</strong></label>
+            <input class="form-control" id="amount" name="amount" type="number" required ng-model="selectedProductAmount"/>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-outline-warning btn-block" ng-disabled="orderForm.$invalid" ng-click="orderForm.$valid && add()">Add</button>
+        </div>
+        <table class="table table-sm table-bordered table-hover" ng-hide="currentOrder.items.length == 0">
+            <thead class="thead-dark">
+                <tr>
+                    <th class="align-middle">Product</th>
+                    <th class="align-middle">Amount</th>
+                    <th class="align-middle">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in currentOrder.items">
+                    <td class="align-middle">{{ item.product.description }}</td>
+                    <td class="align-middle">{{ item.amount }}</td>
+                    <td class="align-middle">
+                        <button class="btn btn-block btn-outline-danger" ng-click="remove(item.product._id)">Remove</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="form-group" ng-hide="currentOrder.items.length == 0">
+            <button class="btn btn-outline-success btn-block" ng-click="create()">Create</button>
+        </div>
+    </form>
+</article>

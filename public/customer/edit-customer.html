@@ -1,0 +1,28 @@
+<header>
+    <h2 class="text-primary">{{ title }}</h2>
+</header>
+
+<article>
+    <form name="customerForm">
+        <div class="form-group">
+            <label for="name"><strong>Name</strong></label>
+            <input class="form-control" id="name" name="name" type="text" autofocus required ng-model="customer.name"/>
+        </div>
+        <div class="form-group">
+            <label for="eMail"><strong>E-Mail</strong></label>
+            <input class="form-control" id="eMail" name="eMail" type="email" required ng-model="customer.eMail"/>
+        </div>
+        <div class="form-group">
+            <label for="code"><strong>Code</strong></label>
+            <input class="form-control" id="code" name="code" type="number" required ng-model="customer.code"/>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-outline-success btn-block" ng-click="customerForm.$valid && update()">Update</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-outline-danger btn-block" ng-click="remove()">Remove</button>
+            </div>
+        </div>
+    </form>
+</article>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <base href="/">
+
+        <title>MEAN application</title>
+
+        <!-- JQuery -->
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+
+        <!-- Popper -->
+        <script src="../node_modules/popper.js/dist/popper.js"></script>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+        <!-- Angular -->
+        <script src="../node_modules/angular/angular.js"></script>
+        <script src="../node_modules/angular-route/angular-route.js"></script>
+        <script src="../node_modules/angular-resource/angular-resource.js"></script>
+        <script src="../app.module.js"></script>
+        <script src="../app.route.js"></script>
+
+        <!-- Main -->
+        <script src="../main/main.module.js"></script>
+        <script src="../main/main.controller.js"></script>
+
+        <!-- Customer -->
+        <script src="../customer/customer.module.js"></script>
+        <script src="../customer/customer.service.js"></script>
+        <script src="../customer/get-all-customers.controller.js"></script>
+        <script src="../customer/create-customer.controller.js"></script>
+        <script src="../customer/edit-customer.controller.js"></script>
+
+        <!-- Product -->
+        <script src="../product/product.module.js"></script>
+        <script src="../product/product.service.js"></script>
+        <script src="../product/get-all-products.controller.js"></script>
+        <script src="../product/create-product.controller.js"></script>
+        <script src="../product/edit-product.controller.js"></script>
+
+        <!-- Order -->
+        <script src="../order/order.module.js"></script>
+        <script src="../order/order.service.js"></script>
+        <script src="../order/get-all-orders.controller.js"></script>
+        <script src="../order/create-order.controller.js"></script>
+        <script src="../order/view-order.controller.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <header>
+                <h1 class="text-center">MEAN application</h1>
+            </header>
+        </div>
+
+        <div class="container-fluid">
+            <main ng-view>
+            </main>
+        </div>
+
+        <div class="container-fluid">
+            <nav class="nav navbar-expand-sm bg-primary navbar-dark fixed-bottom">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Main</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/customers">Get all customers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/customer">Create customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/products">Get all products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/product">Create product</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </body>
+</html>

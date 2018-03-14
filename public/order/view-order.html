@@ -1,0 +1,35 @@
+<header>
+    <h2 class="text-primary">{{ title }}</h2>
+</header>
+
+<article>
+    <form name="orderForm">
+        <div class="form-group">
+            <label for="customerName"><strong>Customer name</strong></label>
+            <input class="form-control" id="customerName" name="customerName" type="text" disabled ng-model="customer.name"/>
+        </div>
+        <div class="form-group">
+            <label for="orderId"><strong>Order ID</strong></label>
+            <input class="form-control" id="orderId" name="orderId" type="text" disabled ng-model="currentOrder._id"/>
+        </div>
+    </form>
+    <table class="table table-sm table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th class="align-middle">Item ID</th>
+                <th class="align-middle">Product</th>
+                <th class="align-middle">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in currentOrder.items">
+                <td class="align-middle">{{ item._id }}</td>
+                <td class="align-middle">{{ item.product == null ? 'Product deleted' : item.product.description }}</td>
+                <td class="align-middle">{{ item.amount }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button class="btn btn-outline-warning btn-block" ng-click="back()">Back</button>
+    </div>
+</article>

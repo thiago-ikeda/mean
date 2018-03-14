@@ -1,0 +1,24 @@
+<header>
+    <h2 class="text-primary">{{ title }}</h2>
+</header>
+
+<article>
+    <div class="table-responsive-sm">
+        <table class="table table-sm table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th class="align-middle">Description</th>
+                    <th class="align-middle">Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in products">
+                    <td class="align-middle">{{ product.description }}</td>
+                    <td class="align-middle">
+                        <button class="btn btn-block btn-outline-primary" ng-click="edit()">Edit</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</article>

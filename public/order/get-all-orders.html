@@ -1,0 +1,29 @@
+<header>
+    <h2 class="text-primary">{{ title }}</h2>
+</header>
+
+<article>
+    <form name="orderForm">
+        <div class="form-group">
+            <label for="customerName"><strong>Customer name</strong></label>
+            <input class="form-control" id="customerName" name="customerName" type="text" disabled ng-model="customer.name"/>
+        </div>
+    </form>
+    <table class="table table-sm table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th class="align-middle">Order ID</th>
+                <th class="align-middle">View items</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="order in customer.orders">
+                <td class="align-middle">{{ order._id }}</td>
+                <td class="align-middle"><button class="btn btn-block btn-outline-secondary" ng-click="viewItems(order._id)">View items</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button class="btn btn-outline-warning btn-block" ng-click="back()">Back</button>
+    </div>
+</article>

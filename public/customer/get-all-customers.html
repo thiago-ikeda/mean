@@ -1,0 +1,38 @@
+<header>
+    <h2 class="text-primary">{{ title }}</h2>
+</header>
+
+<article>
+    <div class="table-responsive-sm">
+        <table class="table table-sm table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th class="align-middle">Name</th>
+                    <th class="align-middle">E-Mail</th>
+                    <th class="align-middle">Code</th>
+                    <th class="align-middle">Order</th>
+                    <th class="align-middle">Edit</th>
+                    <th class="align-middle">Create order</th>
+                    <th class="align-middle">View orders</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="customer in customers">
+                    <td class="align-middle">{{ customer.name }}</td>
+                    <td class="align-middle">{{ customer.eMail }}</td>
+                    <td class="align-middle">{{ customer.code }}</td>
+                    <td class="align-middle">{{ customer.orders.length }}</td>
+                    <td class="align-middle">
+                        <button class="btn btn-block btn-outline-primary" ng-click="edit()">Edit</button>
+                    </td>
+                    <td class="align-middle">
+                        <button class="btn btn-block btn-outline-warning" ng-click="createOrder()">Create order</button>
+                    </td>
+                    <td class="align-middle">
+                        <button class="btn btn-block btn-outline-secondary" ng-click="viewOrders()" ng-disabled="customer.orders.length == 0">View orders</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</article>

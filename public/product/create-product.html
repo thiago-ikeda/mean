@@ -1,0 +1,15 @@
+<header>
+    <h2 class="text-primary">{{ title }}</h2>
+</header>
+
+<article>
+    <form name="productForm">
+        <div class="form-group">
+            <label for="description"><strong>Description</strong></label>
+            <input class="form-control" id="description" name="description" type="text" autofocus required ng-model="product.description"/>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-outline-success btn-block" ng-click="productForm.$valid && create()">Create</button>
+        </div>
+    </form>
+</article>

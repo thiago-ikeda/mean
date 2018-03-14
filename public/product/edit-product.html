@@ -1,0 +1,20 @@
+<header>
+    <h2 class="text-primary">{{ title }}</h2>
+</header>
+
+<article>
+    <form name="productForm">
+        <div class="form-group">
+            <label for="description"><strong>Description</strong></label>
+            <input class="form-control" id="description" name="description" type="text" autofocus required ng-model="product.description"/>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-outline-success btn-block" ng-click="productForm.$valid && update()">Update</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-outline-danger btn-block" ng-click="remove()">Remove</button>
+            </div>
+        </div>
+    </form>
+</article>
